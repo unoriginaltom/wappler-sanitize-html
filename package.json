@@ -1,0 +1,15 @@
+{
+    "name": "@astrovia/wappler-sanitize-html",
+    "author": "astrovia",
+    "version": "1.0.0",
+    "description": "Node.js server extension for sanitizing HTML with the sanitize-html package in Wappler.",
+    "license": "MIT",
+    "keywords": [
+        "wappler-extension",
+        "sanitize-html",
+        "wappler-sanitize-html"
+    ],
+    "dependencies": {
+        "sanitize-html": "^2.3.0"
+    }
+}
