@@ -1,80 +1,112 @@
 {
-  type: 'wappler_sanitize_html',
-  module: 'wappler-sanitize-html',
-  action: 'sanitizeHTML',
-  groupTitle: 'Text Processing',
-  groupIcon: 'fas fa-lg fa-file-code',
-  title: 'Sanitize HTML',
-  icon: 'fas fa-lg fa-file-code',
-  dataScheme: [
-    { name: 'cleanedHtml', type: 'text' }
-  ],
-  dataPickObject: true,
-  properties: [
+  "type": "wappler_sanitize_html",
+  "module": "wappler-sanitize-html",
+  "action": "sanitizeHTML",
+  "groupTitle": "Text Processing",
+  "groupIcon": "fas fa-lg fa-file-code",
+  "title": "Sanitize HTML: @@var(actionName)@@",
+  "icon": "fas fa-lg fa-file-code",
+  "dataPickObject": true,
+  "properties": [
     {
-      group: 'Options',
-      variables: [
-        { 
-          name: 'actionName', 
-          optionName: 'name', 
-          title: 'Name', 
-          type: 'text', 
-          required: true, 
-          defaultValue: 'sanitizeHTML'
+      "group": "Options",
+      "variables": [
+        {
+          "name": "actionName",
+          "optionName": "name",
+          "title": "Name",
+          "type": "text",
+          "required": true,
+          "defaultValue": "sanitizeHTML"
         },
         {
-          name: 'html',
-          optionName: 'html',
-          title: 'HTML Text',
-          type: 'textarea',
-          required: true,
-          serverDataBindings: true
+          "name": "html",
+          "optionName": "html",
+          "title": "HTML Text",
+          "type": "textarea",
+          "required": true,
+          "serverDataBindings": true
         },
         {
-          name: 'disallowedTagsMode',
-          optionName: 'disallowedTagsMode',
-          title: 'Disallowed Tags Mode',
-          type: 'droplist', 
-          values: [
-            {title: 'Discard', value: 'discard'},
-            {title: 'Escape', value: 'escape',},
-            {title: 'Recursive Escape', value: 'recursiveEscape'}
+          "name": "disallowedTagsMode",
+          "optionName": "disallowedTagsMode",
+          "title": "Disallowed Tags Mode",
+          "type": "droplist",
+          "values": [
+            {
+              "title": "Discard",
+              "value": "discard"
+            },
+            {
+              "title": "Escape",
+              "value": "escape"
+            },
+            {
+              "title": "Recursive Escape",
+              "value": "recursiveEscape"
+            }
           ],
-          serverDataBindings: true,
+          "serverDataBindings": true
         },
         {
-          name: 'allowedTags',
-          optionName: 'allowedTags',
-          title: 'Allowed Tags',
-          type: 'textarea', 
-          serverDataBindings: true,
+          "name": "allowedTags",
+          "optionName": "allowedTags",
+          "title": "Allowed Tags",
+          "type": "textarea",
+          "serverDataBindings": true
         },
         {
-          name: 'nonBooleanAttributes',
-          optionName: 'nonBooleanAttributes',
-          title: 'Non Boolean Attributes',
-          type: 'textarea',
-          serverDataBindings: true,
+          "name": "allowedAttributes",
+          "optionName": "allowedAttributes",
+          "title": "allowedAttributes",
+          "type": "grid",
+          "defaultValue": {},
+          "ServerDataBindings": true,
+          "columns": [
+            {
+              "field": "tag",
+              "caption": "Tag",
+              "size": "30%",
+              "editable": {
+                "type": "text"
+              }
+            },
+            {
+              "field": "attributes",
+              "caption": "Attributes",
+              "size": "70%",
+              "editable": {
+                "type": "array"
+              }
+            }
+          ]
         },
         {
-          name: 'allowedIframeHostnames',
-          optionName: 'allowedIframeHostnames',
-          title: 'Allowed Iframe Hostnames',
-          type: 'textarea',
-          serverDataBindings: true,
+          "name": "nonBooleanAttributes",
+          "optionName": "nonBooleanAttributes",
+          "title": "Non Boolean Attributes",
+          "type": "textarea",
+          "serverDataBindings": true
         },
         {
-          name: 'allowedIframeDomains',
-          optionName: 'allowedIframeDomains',
-          title: 'Allowed Iframe Domains',
-          type: 'textarea',
-          serverDataBindings: true,
+          "name": "allowedIframeHostnames",
+          "optionName": "allowedIframeHostnames",
+          "title": "Allowed Iframe Hostnames",
+          "type": "textarea",
+          "serverDataBindings": true
         },
         {
-          name: 'allowIframeRelativeUrls',
-          optionName: 'allowIframeRelativeUrls',
-          title: 'Allow Iframe Relative Urls',
-          type: 'boolean'
+          "name": "allowedIframeDomains",
+          "optionName": "allowedIframeDomains",
+          "title": "Allowed Iframe Domains",
+          "type": "textarea",
+          "serverDataBindings": true
+        },
+        {
+          "name": "allowIframeRelativeUrls",
+          "optionName": "allowIframeRelativeUrls",
+          "title": "Allow Iframe Relative Urls",
+          "type": "boolean"
         }
       ]
     }
